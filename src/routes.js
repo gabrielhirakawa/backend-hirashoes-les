@@ -1,7 +1,7 @@
 import { Router } from "express";
 import SessionsController from './controllers/SessionsController';
 import UserController from './controllers/UserController';
-import EnderecoController from './controllers/EnderecoController';
+import PedidosController from './controllers/PedidosController';
 import authMiddleware from './middlewares/auth';
 
 const routes = new Router();
@@ -12,7 +12,7 @@ routes.get('/', (req, res) => {
 });
 
 routes.post('/sessions', SessionsController.store);
+routes.post('/sales', PedidosController.store);
 routes.post('/users', UserController.store);
-routes.post('/users/:user_id/addresses', EnderecoController.store);
 
 module.exports = routes;

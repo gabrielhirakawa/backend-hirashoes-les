@@ -20,6 +20,7 @@ class Endereco extends Model {
 
     static associate(models){
         this.belongsTo(models.Cliente, { foreignKey: 'user_id', as: 'owner' });
+        this.hasMany(models.Pedido, { foreignKey: 'endereco_id', as: 'pedidos' });
     }
 }
 

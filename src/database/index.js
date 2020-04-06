@@ -4,8 +4,13 @@ import databaseConfig from '../config/database';
 import Cliente from '../models/Cliente';
 import Endereco from '../models/Endereco';
 import Telefone from '../models/Telefone';
+import Cartao from '../models/Cartao';
+import Pedido from '../models/Pedido';
+import Produto from '../models/Produto';
+import Categoria from '../models/Categoria';
+import Itens_pedidos from '../models/Itens_pedidos';
 
-const models = [Cliente, Endereco, Telefone];
+const models = [Cliente, Endereco, Telefone, Cartao, Pedido, Produto, Categoria, Itens_pedidos];
 
 class Database{
     constructor(){
