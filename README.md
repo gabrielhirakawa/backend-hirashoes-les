@@ -1,4 +1,4 @@
-# Hirashoes - Backend :shirt:
+# Hirashoes - Backend (node JS) :shirt: 
 
 ## Sobre
 Projeto backend para aplicação e-commerce **Hirashoes** desenvolvida para matéria de Laboratório de Engenharia de Software.
