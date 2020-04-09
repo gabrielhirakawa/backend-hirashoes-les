@@ -10,6 +10,7 @@ class Cartao extends Model {
             bandeira: Sequelize.STRING,
         }, {
             sequelize,
+            tableName: 'cartoes'
         });
 
         return this;
@@ -17,7 +18,7 @@ class Cartao extends Model {
 
     static associate(models) {
         this.belongsTo(models.Cliente, { foreignKey: 'user_id', as: 'owner' });
-        this.hasMany(models.Pedido, { foreignKey: 'cartao_id', as: 'pedidos' });
+        this.belongsToMany(models.Pedidos_Cartoes, { foreignKey: 'pedido_id', through: 'pedidos_cartoes', as: 'cartoes' });
     }
 }
 

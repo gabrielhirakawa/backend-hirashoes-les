@@ -1,21 +1,21 @@
 import Sequelize, { Model } from 'sequelize';
 
-class Itens_pedidos extends Model {
+class Pedidos_Cartoes extends Model {
     static init(sequelize) {
         super.init({
-            quantidade: Sequelize.INTEGER,
+            valor: Sequelize.INTEGER,
         }, {
             sequelize,
-            tableName: 'itens_pedidos'
+            tableName: 'pedidos_cartoes'
         });
 
         return this;
     }
 
     static associate(models) {
-        this.belongsTo(models.Produto, { foreignKey: 'produto_id', as: 'produto' });
         this.belongsTo(models.Pedido, { foreignKey: 'pedido_id', as: 'pedido' });
+        this.belongsTo(models.Cartao, { foreignKey: 'cartao_id', as: 'cartao' });
     }
 }
 
-export default Itens_pedidos;
+export default Pedidos_Cartoes;

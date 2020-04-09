@@ -54,7 +54,7 @@ class UserController{
             numero: telefone, 
         });
 
-        return res.json({user, tel, endereco});
+        return res.status(200).json({user, tel, endereco});
     }
 }
 

@@ -1,8 +1,14 @@
 import { Router } from "express";
 import SessionsController from './controllers/SessionsController';
 import UserController from './controllers/UserController';
+import EnderecoController from './controllers/EnderecoController';
 import PedidosController from './controllers/PedidosController';
+import ProdutosController from './controllers/ProdutosController';
+import CupomController from "./controllers/CupomController";
+import CartaoController from "./controllers/CartaoController";
+
 import authMiddleware from './middlewares/auth';
+
 
 const routes = new Router();
 
@@ -12,7 +18,20 @@ routes.get('/', (req, res) => {
 });
 
 routes.post('/sessions', SessionsController.store);
-routes.post('/sales', PedidosController.store);
+
+
+routes.get('/products', ProdutosController.index);
+routes.get('/cupons/:codigo',  CupomController.index);
+
+routes.post('/pedidos', PedidosController.store);
+routes.get('/pedidos', PedidosController.index);
+routes.get('/pedidos/:id', PedidosController.show);
+
 routes.post('/users', UserController.store);
+routes.post('/:user_id/cartoes', CartaoController.store);
+
+routes.post('/:user_id/enderecos', EnderecoController.store);
+routes.get('/:user_id/enderecos', EnderecoController.index);
+
 
 module.exports = routes;
