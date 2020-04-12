@@ -23,13 +23,20 @@ routes.post('/sessions', SessionsController.store);
 routes.get('/products', ProdutosController.index);
 routes.get('/cupons/:codigo',  CupomController.index);
 
+// Pedidos
 routes.post('/pedidos', PedidosController.store);
 routes.get('/pedidos', PedidosController.index);
 routes.get('/pedidos/:id', PedidosController.show);
 
+// User
+routes.get('/users/:user_id', UserController.index);
 routes.post('/users', UserController.store);
-routes.post('/:user_id/cartoes', CartaoController.store);
 
+// Cartões
+routes.post('/:user_id/cartoes', CartaoController.store);
+routes.get('/:user_id/cartoes', CartaoController.index);
+
+// Endereços
 routes.post('/:user_id/enderecos', EnderecoController.store);
 routes.get('/:user_id/enderecos', EnderecoController.index);
 

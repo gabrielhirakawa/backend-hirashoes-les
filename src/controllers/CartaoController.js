@@ -24,6 +24,20 @@ class CartaoController{
 
         return res.status(200).json({ cartao });
     }
+
+    async index(req, res){
+        const { user_id } = req.params;
+
+        const cartoes = await Cartao.findAll({
+            where: { user_id }
+        })
+
+        if(!cartoes){
+            return res.status(401).json({ error: "Nenhum cartão não encontrado" });
+        }
+
+        return res.status(200).json(cartoes);
+    }
 }
 
 export default new CartaoController();
