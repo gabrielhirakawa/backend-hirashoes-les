@@ -14,10 +14,11 @@ class SessionController {
         
         
         if (!user) {
-            return res.status(401).json({ error: "User not found" });
+            return res.status(401).json({ error: "Usuário não encontrado" });
         }
-        if (!(await user.checkPassword(password))) {
-            return res.status(401).json({ error: "Password does not mach" });
+
+        if (user.password !== password) {
+            return res.status(401).json({ error: "Senha incorreta!" });
         }
 
         const { id, name } = user;
