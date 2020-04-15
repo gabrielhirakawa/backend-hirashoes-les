@@ -10,9 +10,10 @@ import Produto from '../models/Produto';
 import Categoria from '../models/Categoria';
 import Itens_pedidos from '../models/Itens_pedidos';
 import Cupom from '../models/Cupom';
+import Troca from '../models/Troca';
 import Pedidos_Cartoes from '../models/Pedidos_Cartoes';
 
-const models = [Cliente, Endereco, Telefone, Cartao, Pedido, Produto, Categoria, Itens_pedidos, Cupom, Pedidos_Cartoes];
+const models = [Cliente, Endereco, Telefone, Cartao, Pedido, Produto, Categoria, Itens_pedidos, Cupom, Pedidos_Cartoes, Troca];
 
 class Database{
     constructor(){

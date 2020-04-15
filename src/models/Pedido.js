@@ -19,9 +19,10 @@ class Pedido extends Model {
 
     static associate(models) {
         this.belongsToMany(models.Produto, { foreignKey: 'pedido_id', through: 'itens_pedidos', as: 'itens' });
-        this.belongsToMany(models.Pedidos_Cartoes, { foreignKey: 'pedido_id', through: 'pedidos_cartoes', as: 'cartoes' });
-        this.belongsTo(models.Cliente, { foreignKey: 'user_id', as: 'cliente' });
+        this.belongsToMany(models.Cartao, { foreignKey: 'pedido_id', through: 'pedidos_cartoes', as: 'cartoes' });
+        this.belongsTo(models.Cliente, { foreignKey: 'user_id', as: 'owner' });
         this.belongsTo(models.Endereco, { foreignKey: 'endereco_id', as: 'endereco' });
+        this.hasMany(models.Troca, { foreignKey: 'pedido_id', as: 'trocas' });
     }
 }
 

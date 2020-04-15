@@ -8,6 +8,7 @@ import CupomController from "./controllers/CupomController";
 import CartaoController from "./controllers/CartaoController";
 
 import authMiddleware from './middlewares/auth';
+import TrocasController from "./controllers/TrocasController";
 
 
 const routes = new Router();
@@ -34,11 +35,16 @@ routes.post('/users', UserController.store);
 
 // Cartões
 routes.post('/:user_id/cartoes', CartaoController.store);
+routes.put('/:user_id/cartoes/:cartao_id', CartaoController.update);
 routes.get('/:user_id/cartoes', CartaoController.index);
 
 // Endereços
 routes.post('/:user_id/enderecos', EnderecoController.store);
 routes.get('/:user_id/enderecos', EnderecoController.index);
 
+// Trocas
+routes.post('/:user_id/trocas', TrocasController.store);
+routes.put('/:user_id/trocas/:troca_id', TrocasController.update);
+routes.get('/:user_id/trocas', TrocasController.index);
 
 module.exports = routes;

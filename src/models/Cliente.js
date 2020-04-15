@@ -21,6 +21,7 @@ class Cliente extends Model {
         this.hasMany(models.Telefone, { foreignKey: 'user_id', as: 'telefones' });
         this.hasMany(models.Cartao, { foreignKey: 'user_id', as: 'cartoes' });
         this.hasMany(models.Pedido, { foreignKey: 'user_id', as: 'pedidos' });
+        this.hasMany(models.Troca, { foreignKey: 'user_id', as: 'trocas' });
     }
 }
 

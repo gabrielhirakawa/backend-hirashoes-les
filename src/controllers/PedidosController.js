@@ -4,6 +4,7 @@ import Pedido from "../models/Pedido";
 import Itens_pedidos from "../models/Itens_pedidos";
 import Pedidos_Cartoes from '../models/Pedidos_Cartoes';
 import Cartao from '../models/Cartao';
+import Produto from '../models/Produto';
 
 
 class PedidosController {
@@ -77,28 +78,38 @@ class PedidosController {
         const { id } = req.params;
 
         const pedido = await Pedido.findOne({
-            where: { id }
+            where: { id },
+            include: [
+                {
+                    model: Produto,
+                    as: 'itens'
+                },
+                {
+                    model: Cartao,
+                    as: 'cartoes'
+                }
+            ]
         })
 
         if (!pedido) {
             return res.status(401).json({ error: "Ops.. nenhum pedido encontrado" });
         }
 
-        const cartoesBanco = await Pedidos_Cartoes.findAll({
-            where: { pedido_id: id }
-        });
+        // const cartoesBanco = await Pedidos_Cartoes.findAll({
+        //     where: { pedido_id: id },
+        // });
 
-        let cartoesbusca = [];
+        // let cartoesbusca = [];
 
-        for (let i = 0; i < cartoesBanco.length; i++) {
-            const card = await Cartao.findByPk(cartoesBanco[i].cartao_id);
-            cartoesbusca.push(card)
-        }
+        // for (let i = 0; i < cartoesBanco.length; i++) {
+        //     const card = await Cartao.findByPk(cartoesBanco[i].cartao_id);
+        //     cartoesbusca.push(card)
+        // }
 
 
-        const cartoes = cartoesbusca;
+        // const cartoes = cartoesbusca;
 
-        return res.status(200).json({ pedido, cartoes });
+        return res.status(200).json({ pedido });
     }
 }
 

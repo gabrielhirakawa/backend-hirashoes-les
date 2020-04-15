@@ -2,6 +2,8 @@ import Cliente from "../models/Cliente";
 import Telefone from "../models/Telefone";
 import Endereco from "../models/Endereco";
 import Cartao from "../models/Cartao";
+import Pedido from '../models/Pedido';
+import Produto from '../models/Produto';
 
 class UserController {
     async store(req, res) {
@@ -74,6 +76,20 @@ class UserController {
                 model: Cartao,
                 as: 'cartoes'
             },
+            {
+                model: Pedido,
+                as: 'pedidos',
+                include: [
+                    {
+                        model: Produto,
+                        as: 'itens'
+                    },
+                    {
+                        model: Cartao,
+                        as: 'cartoes'
+                    }
+                ]
+            }
             ]
         });
 
