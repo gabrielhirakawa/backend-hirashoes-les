@@ -23,6 +23,7 @@ routes.post('/sessions', SessionsController.store);
 
 routes.get('/products', ProdutosController.index);
 routes.get('/cupons/:codigo',  CupomController.index);
+routes.post('/cupons',  CupomController.store);
 
 // Pedidos
 routes.post('/pedidos', PedidosController.store);
@@ -46,5 +47,6 @@ routes.get('/:user_id/enderecos', EnderecoController.index);
 routes.post('/:user_id/trocas', TrocasController.store);
 routes.put('/:user_id/trocas/:troca_id', TrocasController.update);
 routes.get('/:user_id/trocas', TrocasController.index);
+routes.get('/trocas', TrocasController.show);
 
 module.exports = routes;

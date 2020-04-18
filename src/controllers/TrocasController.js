@@ -29,6 +29,27 @@ class EnderecoController {
         return res.status(200).json(trocas);
     }
 
+    async show(req, res) {
+        const trocas = await Troca.findAll({
+            include: [
+                {
+                    model: Produto,
+                    as: 'produto'
+                },
+                {
+                    model: Pedido,
+                    as: 'pedido'
+                }
+            ]
+        })
+
+        if (!trocas) {
+            return res.status(401).json({ error: "Nenhuma solicitação encontrado" });
+        }
+
+        return res.status(200).json(trocas);
+    }
+
     async store(req, res) {
         const { tipo, motivo, status, descricao, produto_id, pedido_id } = req.body;
 
@@ -40,7 +61,7 @@ class EnderecoController {
             return res.status(401).json({ error: "Usuário não encontrado" });
         }
 
-        const trocaExists = await Troca.findOne({ where: { produto_id, pedido_id }})
+        const trocaExists = await Troca.findOne({ where: { produto_id, pedido_id } })
 
         if (trocaExists) {
             return res.status(400).json({ error: "Já existe uma solicitação para esse pedido" });
@@ -54,13 +75,13 @@ class EnderecoController {
             tipo,
             status: 'pendente',
             motivo
-        }).catch(e => res.status(400).json({error: 'erro ao processar'}))
+        }).catch(e => res.status(400).json({ error: 'erro ao processar' }))
 
         return res.status(200).json({ troca });
     }
 
     async update(req, res) {
-        const { tipo, motivo, status, descricao, produto_id, pedido_id } = req.body;
+        const { status } = req.body;
 
         const { user_id, troca_id } = req.params;
 
@@ -71,13 +92,7 @@ class EnderecoController {
         }
 
         const troca = await Troca.update({
-            user_id,
-            produto_id,
-            pedido_id,
-            descricao,
-            tipo,
-            status: 'aprovada',
-            motivo
+            status,
         }, {
             where: { id: troca_id }
         });
