@@ -6,7 +6,9 @@ class Cupom extends Model {
             tipo: Sequelize.STRING,
             codigo: Sequelize.STRING,
             status: Sequelize.STRING,
-            valor: Sequelize.INTEGER,
+            percentual_desconto: Sequelize.INTEGER,
+            quantidade: Sequelize.INTEGER,
+
         }, {
             sequelize,
             tableName: 'cupons'

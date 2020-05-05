@@ -14,6 +14,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      data_pedido: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
       tipo: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -22,20 +26,24 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      status_entrega: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       frete: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DOUBLE,
         allowNull: false,
       },
       desconto: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DOUBLE,
         allowNull: false,
       },
       total: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DOUBLE,
         allowNull: false,
       },
       total_com_desconto: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DOUBLE,
         allowNull: false,
       },
       user_id: {

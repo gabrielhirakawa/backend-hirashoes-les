@@ -18,7 +18,11 @@ module.exports = {
         type: Sequelize.STRING, 
         allowNull: false,
       },
-      valor: {
+      percentual_desconto: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      quantidade: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

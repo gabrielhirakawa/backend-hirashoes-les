@@ -19,7 +19,8 @@ class CartaoController{
            nome_impresso,
            cvv,
            data_expiracao,
-           bandeira
+           bandeira,
+           status: true
         });
 
         return res.status(200).json({ cartao });
@@ -29,7 +30,7 @@ class CartaoController{
         const { user_id } = req.params;
 
         const cartoes = await Cartao.findAll({
-            where: { user_id }
+            where: { user_id, status: true }
         })
 
         if(!cartoes){
@@ -39,8 +40,8 @@ class CartaoController{
         return res.status(200).json(cartoes);
     }
 
-    async update(req, res){
-        const { numero, nome_impresso, cvv, data_expiracao, bandeira } = req.body;
+    async delete(req, res){
+        // const { numero, nome_impresso, cvv, data_expiracao, bandeira, status } = req.body;
 
         const { user_id, cartao_id } = req.params;
 
@@ -51,12 +52,7 @@ class CartaoController{
         }
 
         const cartao = await Cartao.update({
-            user_id,
-            numero,
-            nome_impresso,
-            cvv,
-            data_expiracao,
-            bandeira
+            status: false
          }, {
              where: { id: cartao_id }
          });

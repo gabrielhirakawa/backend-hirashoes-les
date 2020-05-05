@@ -6,10 +6,12 @@ class Pedido extends Model {
             codigo: Sequelize.STRING,
             tipo: Sequelize.STRING,
             status: Sequelize.STRING,
-            total: Sequelize.INTEGER,
-            total_com_desconto: Sequelize.INTEGER,
-            desconto: Sequelize.INTEGER,
-            frete: Sequelize.INTEGER,
+            total: Sequelize.DOUBLE,
+            total_com_desconto: Sequelize.DOUBLE,
+            desconto: Sequelize.DOUBLE,
+            frete: Sequelize.DOUBLE,
+            status_entrega: Sequelize.STRING,
+            data_pedido: Sequelize.DATE
         }, {
             sequelize,
         });

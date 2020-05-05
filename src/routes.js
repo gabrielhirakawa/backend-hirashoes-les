@@ -22,8 +22,12 @@ routes.post('/sessions', SessionsController.store);
 
 
 routes.get('/products', ProdutosController.index);
+
+//Cupons
 routes.get('/cupons/:codigo',  CupomController.index);
+routes.get('/cupons',  CupomController.show);
 routes.post('/cupons',  CupomController.store);
+
 
 // Pedidos
 routes.post('/pedidos', PedidosController.store);
@@ -36,7 +40,7 @@ routes.post('/users', UserController.store);
 
 // Cartões
 routes.post('/:user_id/cartoes', CartaoController.store);
-routes.put('/:user_id/cartoes/:cartao_id', CartaoController.update);
+routes.delete('/:user_id/cartoes/:cartao_id', CartaoController.delete);
 routes.get('/:user_id/cartoes', CartaoController.index);
 
 // Endereços

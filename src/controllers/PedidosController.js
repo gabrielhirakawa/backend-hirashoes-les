@@ -23,11 +23,13 @@ class PedidosController {
             status: 'aprovado',
             tipo: 'cartao',
             frete,
-            desconto,
+            desconto, 
             total,
             total_com_desconto,
             user_id,
             endereco_id,
+            status_entrega: 'pendente',
+            data_pedido: new Date()
 
         }).catch(e => {
             return res.status(401).json({ error: "Erro ao finalizar pedido" });
@@ -49,6 +51,7 @@ class PedidosController {
             cartoes.map(async (item) => {
                 await Pedidos_Cartoes.create({
                     valor: item.valor,
+                    parcelas: item.parcelas,
                     cartao_id: item.cartao_id,
                     pedido_id: pedido.id,
                 }).catch(e => {

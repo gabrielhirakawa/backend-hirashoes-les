@@ -4,6 +4,7 @@ import Endereco from "../models/Endereco";
 import Cartao from "../models/Cartao";
 import Pedido from '../models/Pedido';
 import Produto from '../models/Produto';
+import CupomTroca from '../models/CupomTroca';
 
 class UserController {
     async store(req, res) {
@@ -67,6 +68,11 @@ class UserController {
             include: [{
                 model: Endereco,
                 as: 'enderecos'
+            },
+            {
+                model: CupomTroca,
+                as: 'cupons',
+                // where: { utilizado: false }
             },
             {
                 model: Telefone,

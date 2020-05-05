@@ -3,7 +3,8 @@ import Sequelize, { Model } from 'sequelize';
 class Pedidos_Cartoes extends Model {
     static init(sequelize) {
         super.init({
-            valor: Sequelize.INTEGER,
+            valor: Sequelize.DOUBLE,
+            parcelas: Sequelize.INTEGER,
         }, {
             sequelize,
             tableName: 'pedidos_cartoes'

@@ -3,40 +3,38 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.createTable('pedidos_cartoes', {
+    return queryInterface.createTable('cupons_troca', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-      },
-      pedido_id: {
+      }, 
+      user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'pedidos', // tabela relacionada
+          model: 'clientes', // tabela relacionada
           key: 'id',  // campo referenciado
           onUpdate: 'CASCADE',
           onDelete: 'CASCADE'
         }
-      },
-      cartao_id: {
-        type: Sequelize.INTEGER,
+      },    
+      tipo: {
+        type: Sequelize.STRING, // promocial ou troca
         allowNull: false,
-        references: {
-          model: 'cartoes', // tabela relacionada
-          key: 'id',  // campo referenciado
-          onUpdate: 'CASCADE',
-          onDelete: 'CASCADE'
-        }
       },
-      parcelas: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+      codigo: {
+        type: Sequelize.STRING, 
+        allowNull: false,
       },
       valor: {
         type: Sequelize.DOUBLE,
-        allowNull: false
+        allowNull: false,
+      },
+      utilizado: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -53,7 +51,7 @@ module.exports = {
 
   down: (queryInterface) => {
 
-    return queryInterface.dropTable('pedidos_cartoes');
+    return queryInterface.dropTable('cupons_troca');
 
   }
 };

@@ -8,6 +8,7 @@ class Cartao extends Model {
             data_expiracao: Sequelize.STRING,
             nome_impresso: Sequelize.STRING,
             bandeira: Sequelize.STRING,
+            status: Sequelize.BOOLEAN
         }, {
             sequelize,
             tableName: 'cartoes'

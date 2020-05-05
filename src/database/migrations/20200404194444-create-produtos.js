@@ -15,12 +15,16 @@ module.exports = {
         allowNull: false,
       },
       preco: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DOUBLE,
         allowNull: false,
       },
       descricao: {
         type: Sequelize.STRING,
         allowNull: false,
+      },
+      status: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
       },
       url_img: {
         type: Sequelize.STRING,
