@@ -32,6 +32,7 @@ routes.post('/cupons',  CupomController.store);
 // Pedidos
 routes.post('/pedidos', PedidosController.store);
 routes.get('/pedidos', PedidosController.index);
+routes.put('/pedidos/:id', PedidosController.update);
 routes.get('/pedidos/:id', PedidosController.show);
 
 // User

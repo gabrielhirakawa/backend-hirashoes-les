@@ -40,6 +40,10 @@ module.exports = {
           onDelete: 'CASCADE'
         }
       },
+      quantidade: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       descricao: {
         type: Sequelize.STRING,
         allowNull: false,

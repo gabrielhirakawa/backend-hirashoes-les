@@ -7,6 +7,7 @@ class Troca extends Model {
             motivo: Sequelize.STRING,
             status: Sequelize.STRING,
             descricao: Sequelize.STRING,
+            quantidade: Sequelize.INTEGER,
         }, {
             sequelize,
         });

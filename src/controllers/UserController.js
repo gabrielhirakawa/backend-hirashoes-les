@@ -5,6 +5,7 @@ import Cartao from "../models/Cartao";
 import Pedido from '../models/Pedido';
 import Produto from '../models/Produto';
 import CupomTroca from '../models/CupomTroca';
+import Itens_pedidos from "../models/Itens_pedidos";
 
 class UserController {
     async store(req, res) {
@@ -88,7 +89,11 @@ class UserController {
                 include: [
                     {
                         model: Produto,
-                        as: 'itens'
+                        as: 'produtos',
+                        through: {
+                            model: Itens_pedidos,
+                            attributes: ['id', 'quantidade']
+                        }
                     },
                     {
                         model: Cartao,

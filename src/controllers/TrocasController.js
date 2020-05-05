@@ -51,7 +51,7 @@ class EnderecoController {
     }
 
     async store(req, res) {
-        const { tipo, motivo, status, descricao, produto_id, pedido_id } = req.body;
+        const { tipo, quantidade, motivo, descricao, produto_id, pedido_id } = req.body;
 
         const { user_id } = req.params;
 
@@ -72,6 +72,7 @@ class EnderecoController {
             produto_id,
             pedido_id,
             descricao,
+            quantidade,
             tipo,
             status: 'pendente',
             motivo

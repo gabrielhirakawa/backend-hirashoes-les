@@ -1,0 +1,53 @@
+======== PRODUTOS ==============
+
+INSERT INTO produtos (id, nome, preco, descricao, status, url_img, quantidade, created_at, updated_at)
+VALUES (1, 'Air Force', 350.90, 'teste', true,  'https://artwalk.vteximg.com.br/arquivos/ids/219961_2', 100, '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+INSERT INTO produtos (id, nome, preco, descricao, status, url_img, quantidade, created_at, updated_at)
+VALUES (2, 'Air Jordan 4', 799.90, 'teste', true,  'https://artwalk.vteximg.com.br/arquivos/ids/210643-1000-1000/Tenis-Air-Jordan-4-Retro-Masculino-Branco.jpg?v=636869556528030000', 100, '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+INSERT INTO produtos (id, nome, preco, descricao, status, url_img, quantidade, created_at, updated_at)
+VALUES (3, 'Air Max', 349.90, 'teste', true, 'https://artwalk.vteximg.com.br/arquivos/ids/218440-1000-1000/Tenis-Nike-Air-Max-Dia-Feminino-Vinho.jpg?v=637091654030270000', 100, '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+INSERT INTO produtos (id, nome, preco, descricao, status, url_img, quantidade, created_at, updated_at)
+VALUES (4, 'Puma RS-X Reinvention', 479.90, 'teste', true, 'https://artwalk.vteximg.com.br/arquivos/ids/217369_2', 100, '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+INSERT INTO produtos (id, nome, preco, descricao, status, url_img, quantidade, created_at, updated_at)
+VALUES (5, 'Asics Gel-Lyte III', 449.90, 'teste', true, 'https://artwalk.vteximg.com.br/arquivos/ids/220693-1000-1000/Tenis-Asics-Gel-Lyte-III-OG-Masculino-Multicolor.jpg?v=637167003902900000', 100, '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+INSERT INTO produtos (id, nome, preco, descricao, status, url_img, quantidade, created_at, updated_at)
+VALUES (6, 'Air Max 270 React', 349.90, 'teste', true, 'https://artwalk.vteximg.com.br/arquivos/ids/214575-1000-1000/Tenis-Nike-Air-Max-270-React-Feminino-Multicolor.jpg?v=636991360406330000', 100, '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+INSERT INTO produtos (id, nome, preco, descricao, status, url_img, quantidade, created_at, updated_at)
+VALUES (7, 'Air Jordan Legacy 312', 549.90, 'teste', true, 'https://artwalk.vteximg.com.br/arquivos/ids/214003-1000-1000/Tenis-Air-Jordan-Legacy-312-Low-Masculino.jpg?v=636972603528770000', 100, '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+INSERT INTO produtos (id, nome, preco, descricao, status, url_img, quantidade, created_at, updated_at)
+VALUES (8, 'Air Force 1 GTX', 649.90, 'teste', true, 'https://artwalk.vteximg.com.br/arquivos/ids/219484-1000-1000/Tenis-Nike-Air-Force-1-GTX-Masculino-Preto.jpg?v=637135954953030000', 100, '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+
+====== categorias ============
+
+INSERT INTO categorias (id, nome, created_at, updated_at)
+VALUES (1, 'calçados', '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+INSERT INTO categorias (id, nome, created_at, updated_at)
+VALUES (2, 'acessórios', '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+INSERT INTO categorias (id, nome, created_at, updated_at)
+VALUES (3, 'roupas', '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+INSERT INTO categorias (id, nome, created_at, updated_at)
+VALUES (4, 'roupas', '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+INSERT INTO categorias (id, nome, created_at, updated_at)
+VALUES (5, 'roupas', '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+
+====== cupons =========
+
+INSERT INTO cupons (id, tipo, codigo, valor, status, created_at, updated_at)
+VALUES (1, 'promocional', 'LES', 100, 'ativo', '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
+INSERT INTO cupons (id, tipo, codigo, valor, status, created_at, updated_at)
+VALUES (2, 'promocional', 'PASCOA', 20, 'ativo', '2020-04-06 22:59:27.519+00', '2020-04-06 22:59:27.519+00');
+
